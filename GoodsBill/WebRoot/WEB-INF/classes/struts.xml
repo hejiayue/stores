@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!--type="redirectAction"  动态跳转-->
+<package name="default" namespace="/" extends="struts-default">
+<!-- 查询整体 -->
+	<action name="getAll" class="goodsAction" method="Show">
+		<result name="success">/page/goodslist.jsp</result>
+	</action>
+<!-- 进入修改页面 -->
+	<action name="update" class="goodsAction" method="getById">
+		<result name="success">/page/goodsupdate.jsp</result>
+	</action>
+<!-- 修改 -->
+	<action name="updateGoods" class="goodsAction" method="updateGoods">
+		<result name="success" type="redirectAction">getAll</result>
+	</action>
+</package>
+</struts>    
